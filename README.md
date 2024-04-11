@@ -1,6 +1,6 @@
 ![thumbnail](https://user-images.githubusercontent.com/16558205/180779213-ea740975-3df1-460a-a964-0a623ee25872.png)
 
-### Live - https://react-portfolio-template.netlify.app/
+### Live - https://web.netlify.app/
 
 ### Demo Video - https://www.youtube.com/watch?v=62_HLbx2zLQ&t=9s
 
@@ -47,7 +47,7 @@ Blog - https://blog.chetanverma.com/how-to-build-a-portfolio-website-using-nextj
 
 Quickes way to deploy this repo - 
 
-[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chetanverma16/react-portfolio-template)
+[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chetanverma16/web)
 
 
 ### How To Contribute - 

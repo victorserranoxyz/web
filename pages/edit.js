@@ -47,14 +47,14 @@ const Edit = () => {
           imageSrc:
             "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
 
-          url: "http://chetanverma.com/",
+          url: "https://victorserrano.xyz/",
         },
       ],
     });
   };
 
   const deleteProject = (id) => {
-    const copyProjects = data.projects;
+    let copyProjects = data.projects;
     copyProjects = copyProjects.filter((project) => project.id !== id);
     setData({ ...data, projects: copyProjects });
   };
@@ -83,7 +83,7 @@ const Edit = () => {
   };
 
   const deleteService = (id) => {
-    const copyServices = data.services;
+    let copyServices = data.services;
     copyServices = copyServices.filter((service) => service.id !== id);
     setData({ ...data, services: copyServices });
   };
@@ -104,14 +104,14 @@ const Edit = () => {
         {
           id: uuidv4(),
           title: "New Link",
-          link: "www.chetanverma.com",
+          link: "www.victorserrano.xyz",
         },
       ],
     });
   };
 
   const deleteSocials = (id) => {
-    const copySocials = data.socials;
+    let copySocials = data.socials;
     copySocials = copySocials.filter((social) => social.id !== id);
     setData({ ...data, socials: copySocials });
   };
@@ -202,164 +202,196 @@ const Edit = () => {
         </div>
         {/* HEADER */}
         {currentTabs === "HEADER" && (
-          <div className="mt-10">
-            <div className="flex items-center">
-              <label className="w-1/5 text-lg opacity-50">Name</label>
-              <input
-                value={data.name}
-                onChange={(e) => setData({ ...data, name: e.target.value })}
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                type="text"
-              ></input>
-            </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-sx opacity-50">
-                Header Tagline One
-              </label>
-              <input
-                value={data.headerTaglineOne}
-                onChange={(e) =>
-                  setData({ ...data, headerTaglineOne: e.target.value })
-                }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                type="text"
-              ></input>
-            </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-lg opacity-50">
-                Header Tagline Two
-              </label>
-              <input
-                value={data.headerTaglineTwo}
-                onChange={(e) =>
-                  setData({ ...data, headerTaglineTwo: e.target.value })
-                }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                type="text"
-              ></input>
-            </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-lg opacity-50">
-                Header Tagline Three
-              </label>
-              <input
-                value={data.headerTaglineThree}
-                onChange={(e) =>
-                  setData({ ...data, headerTaglineThree: e.target.value })
-                }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                type="text"
-              ></input>
-            </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-lg opacity-50">
-                Header Tagline Four
-              </label>
-              <input
-                value={data.headerTaglineFour}
-                onChange={(e) =>
-                  setData({ ...data, headerTaglineFour: e.target.value })
-                }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                type="text"
-              ></input>
-            </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-lg opacity-50">Blog</label>
-              <div className="w-4/5 ml-10 flex items-center">
-                <Button
-                  onClick={() => setData({ ...data, showBlog: true })}
-                  type={data.showBlog && "primary"}
-                >
-                  Yes
-                </Button>
-                <Button
-                  onClick={() => setData({ ...data, showBlog: false })}
-                  classes={
-                    !data.showBlog && "bg-red-500 text-white hover:bg-red-600"
-                  }
-                >
-                  No
-                </Button>
+            <div className="mt-10">
+              <div className="flex items-center">
+                <label className="w-1/5 text-lg opacity-50">Name</label>
+                <input
+                    value={data.name}
+                    onChange={(e) => setData({...data, name: e.target.value})}
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                ></input>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-sx opacity-50">
+                  Header Tagline One
+                </label>
+                <input
+                    value={data.headerTaglineOne}
+                    onChange={(e) =>
+                        setData({...data, headerTaglineOne: e.target.value})
+                    }
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                ></input>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">
+                  Header Tagline Two
+                </label>
+                <input
+                    value={data.headerTaglineTwo}
+                    onChange={(e) =>
+                        setData({...data, headerTaglineTwo: e.target.value})
+                    }
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                ></input>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">
+                  Header Tagline Three
+                </label>
+                <input
+                    value={data.headerTaglineThree}
+                    onChange={(e) =>
+                        setData({...data, headerTaglineThree: e.target.value})
+                    }
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                ></input>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">
+                  Header Tagline Four
+                </label>
+                <input
+                    value={data.headerTaglineFour}
+                    onChange={(e) =>
+                        setData({...data, headerTaglineFour: e.target.value})
+                    }
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                ></input>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">Calendly</label>
+                <div className="w-4/5 ml-10 flex items-center">
+                  <Button
+                      onClick={() => setData({...data, showCalendly: true})}
+                      type={data.showCalendly && "primary"}
+                  >
+                    Yes
+                  </Button>
+                  <Button
+                      onClick={() => setData({...data, showCalendly: false})}
+                      classes={
+                          !data.showCalendly && "bg-red-500 text-white hover:bg-red-600"
+                      }
+                  >
+                    No
+                  </Button>
+                </div>
+              </div>
+              <div className={`mt-5 flex items-center ${!data.showCalendly && "hidden"}`} >
+                <label className="w-1/5 text-lg opacity-50" >
+                  Calendly Link
+                </label>
+                <input
+                    value={data.CalendlyLink}
+                    onChange={(e) =>
+                        setData({...data, CalendlyLink: e.target.value})
+                    }
+                    className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                    type="text"
+                ></input>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">Blog</label>
+                <div className="w-4/5 ml-10 flex items-center">
+                  <Button
+                      onClick={() => setData({...data, showBlog: true})}
+                      type={data.showBlog && "primary"}
+                  >
+                    Yes
+                  </Button>
+                  <Button
+                      onClick={() => setData({...data, showBlog: false})}
+                      classes={
+                          !data.showBlog && "bg-red-500 text-white hover:bg-red-600"
+                      }
+                  >
+                    No
+                  </Button>
+                </div>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">Dark Mode</label>
+                <div className="w-4/5 ml-10 flex items-center">
+                  <Button
+                      onClick={() => setData({...data, darkMode: true})}
+                      type={data.darkMode && "primary"}
+                  >
+                    Yes
+                  </Button>
+                  <Button
+                      onClick={() => setData({...data, darkMode: false})}
+                      classes={
+                          !data.darkMode && "bg-red-500 text-white hover:bg-red-600"
+                      }
+                  >
+                    No
+                  </Button>
+                </div>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">Show Resume</label>
+                <div className="w-4/5 ml-10 flex items-center">
+                  <Button
+                      onClick={() => setData({...data, showResume: true})}
+                      type={data.showResume && "primary"}
+                  >
+                    Yes
+                  </Button>
+                  <Button
+                      onClick={() => setData({...data, showResume: false})}
+                      classes={
+                          !data.showResume && "bg-red-500 text-white hover:bg-red-600"
+                      }
+                  >
+                    No
+                  </Button>
+                </div>
+              </div>
+              <div className="mt-5 flex items-center">
+                <label className="w-1/5 text-lg opacity-50">Custom Cursor</label>
+                <div className="w-4/5 ml-10 flex items-center">
+                  <Button
+                      onClick={() => setData({...data, showCursor: true})}
+                      type={data.showCursor && "primary"}
+                  >
+                    Yes
+                  </Button>
+                  <Button
+                      onClick={() => setData({...data, showCursor: false})}
+                      classes={
+                          !data.showCursor && "bg-red-500 text-white hover:bg-red-600"
+                      }
+                  >
+                    No
+                  </Button>
+                </div>
               </div>
             </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-lg opacity-50">Dark Mode</label>
-              <div className="w-4/5 ml-10 flex items-center">
-                <Button
-                  onClick={() => setData({ ...data, darkMode: true })}
-                  type={data.darkMode && "primary"}
-                >
-                  Yes
-                </Button>
-                <Button
-                  onClick={() => setData({ ...data, darkMode: false })}
-                  classes={
-                    !data.darkMode && "bg-red-500 text-white hover:bg-red-600"
-                  }
-                >
-                  No
-                </Button>
-              </div>
-            </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-lg opacity-50">Show Resume</label>
-              <div className="w-4/5 ml-10 flex items-center">
-                <Button
-                  onClick={() => setData({ ...data, showResume: true })}
-                  type={data.showResume && "primary"}
-                >
-                  Yes
-                </Button>
-                <Button
-                  onClick={() => setData({ ...data, showResume: false })}
-                  classes={
-                    !data.showResume && "bg-red-500 text-white hover:bg-red-600"
-                  }
-                >
-                  No
-                </Button>
-              </div>
-            </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-lg opacity-50">Custom Cursor</label>
-              <div className="w-4/5 ml-10 flex items-center">
-                <Button
-                  onClick={() => setData({ ...data, showCursor: true })}
-                  type={data.showCursor && "primary"}
-                >
-                  Yes
-                </Button>
-                <Button
-                  onClick={() => setData({ ...data, showCursor: false })}
-                  classes={
-                    !data.showCursor && "bg-red-500 text-white hover:bg-red-600"
-                  }
-                >
-                  No
-                </Button>
-              </div>
-            </div>
-          </div>
         )}
         {/* PROJECTS */}
         {currentTabs === "PROJECTS" && (
-          <>
-            <div className="mt-10">
-              {data.projects.map((project, index) => (
-                <div className="mt-10" key={project.id}>
-                  <div className="flex items-center justify-between">
-                    <h1 className="text-2xl">{project.title}</h1>
-                    <Button
-                      onClick={() => deleteProject(project.id)}
-                      type="primary"
-                    >
-                      Delete
-                    </Button>
-                  </div>
+            <>
+              <div className="mt-10">
+                {data.projects.map((project, index) => (
+                    <div className="mt-10" key={project.id}>
+                      <div className="flex items-center justify-between">
+                        <h1 className="text-2xl">{project.title}</h1>
+                        <Button
+                            onClick={() => deleteProject(project.id)}
+                            type="primary"
+                        >
+                          Delete
+                        </Button>
+                      </div>
 
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">Title</label>
+                      <div className="flex items-center mt-5">
+                        <label className="w-1/5 text-lg opacity-50">Title</label>
                     <input
                       value={project.title}
                       onChange={(e) =>
@@ -490,8 +522,8 @@ const Edit = () => {
             <h1 className="text-2xl">About</h1>
             <textarea
               className="w-full h-96 mt-10 p-2 rounded-md shadow-md border"
-              value={data.aboutpara}
-              onChange={(e) => setData({ ...data, aboutpara: e.target.value })}
+              value={data.aboutParam}
+              onChange={(e) => setData({ ...data, aboutParam: e.target.value })}
             ></textarea>
           </div>
         )}

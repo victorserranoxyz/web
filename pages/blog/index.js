@@ -88,6 +88,7 @@ const Blog = ({ posts }) => {
                     key={post.slug}
                     onClick={() => Router.push(`/blog/${post.slug}`)}
                   >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       className="w-full h-60 rounded-lg shadow-lg object-cover"
                       src={post.image}

@@ -7,11 +7,11 @@ import Socials from "../components/Socials";
 import Button from "../components/Button";
 import { useTheme } from "next-themes";
 // Data
-import { name, showResume } from "../data/portfolio.json";
-import { resume } from "../data/portfolio.json";
-import data from "../data/portfolio.json";
+import Data from "../data/portfolio.json";
+
 
 const Resume = () => {
+  const { resume, name, showResume  } = Data;
   const router = useRouter();
   const theme = useTheme();
   const [mount, setMount] = useState(false);
@@ -31,10 +31,10 @@ const Resume = () => {
           </Button>
         </div>
       )}
-      {data.showCursor && <Cursor />}
+      {Data.showCursor && <Cursor />}
       <div
         className={`container mx-auto mb-10 ${
-          data.showCursor && "cursor-none"
+          Data.showCursor && "cursor-none"
         }`}
       >
         <Header isBlog />
